@@ -1,6 +1,6 @@
 // controllers/skillController.js
 
-const Skill = require('../models/Skill')
+const Skill = require('../models/skill')
 
 class SkillController {
 
