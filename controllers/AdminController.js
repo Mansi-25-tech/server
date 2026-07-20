@@ -52,7 +52,7 @@ class AdminController {
     };
 
     // Login
-    static login = async (req, res) => {
+   static login = async (req, res) => {
         try {
 
             const { email, password } = req.body;
@@ -85,11 +85,11 @@ class AdminController {
             );
 
             res.cookie("token", token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "strict",
-                maxAge: 24 * 60 * 60 * 1000
-            });
+    httpOnly: true,
+    secure: false,
+    sameSite: "lax",
+    maxAge: 24 * 60 * 60 * 1000,
+});
 
             res.status(200).json({
                 success: true,
